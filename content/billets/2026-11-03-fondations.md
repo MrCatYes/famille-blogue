@@ -26,7 +26,7 @@ Le découpage en user stories est dans les [issues du dépôt](https://github.co
 Les alternatives considérées :
 
 - **Django avec PostgreSQL.** C'est un choix solide, avec une interface d'administration gratuite. Mais j'aurais eu deux mondes à faire cohabiter, Python côté serveur et JavaScript pour l'interactivité du calendrier, et je voulais approfondir l'écosystème React.
-- **Une application mobile native** (React Native ou Flutter). C'est tentant pour les notifications, mais le cours demande une application web accessible sans installation, et une application web bien faite s'ouvre déjà très bien sur téléphone.
+- **Une application mobile native** (React Native ou Flutter). C'est tentant pour les notifications, mais il aurait fallu passer par l'App Store et Google Play : comptes développeur payants, révision de chaque mise à jour, délais de publication. Avec une application web et Supabase comme serveur, je publie quand je veux, et les deux parents y accèdent par un simple lien, sans rien installer. Le cours demande d'ailleurs une application web, et une application web bien faite s'ouvre déjà très bien sur téléphone.
 
 **Supabase pour la base de données, l'authentification et les fichiers.** Supabase, c'est du PostgreSQL hébergé avec l'authentification et le stockage de fichiers intégrés. Le point décisif, c'est la sécurité au niveau des lignes (Row Level Security) : la règle « un parent ne voit que les données de sa famille » est écrite dans la base elle-même, dans [la migration SQL](https://github.com/MrCatYes/famille/blob/main/supabase/migrations/0001_init.sql), et non dans chaque page de l'application. Même si j'oublie un filtre dans une requête, la base refuse de renvoyer les données d'une autre famille.
 
