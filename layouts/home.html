@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="intro">
+  {{ .Content }}
+</section>
+<ul class="posts">
+  {{ range where site.RegularPages "Section" "billets" }}
+  <li>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </li>
+  {{ else }}
+  <li class="empty">Aucun billet pour l'instant.</li>
+  {{ end }}
+</ul>
+{{ end }}

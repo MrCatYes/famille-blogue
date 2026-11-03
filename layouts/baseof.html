@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="{{ site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  <link rel="icon" href="{{ "logo.png" | relURL }}">
+  {{ with resources.Get "style.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+  {{ end }}
+</head>
+<body>
+  <header class="site">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <img src="{{ "logo.png" | relURL }}" alt="" width="36" height="36">
+      <span>{{ site.Title }}</span>
+    </a>
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer class="site">
+    <a href="{{ site.Params.depot }}">Dépôt du projet</a> · INF1410, TÉLUQ
+  </footer>
+</body>
+</html>

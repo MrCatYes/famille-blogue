@@ -1,0 +1,14 @@
+baseURL = "https://mrcatyes.github.io/famille-blogue/"
+languageCode = "fr-CA"
+defaultContentLanguage = "fr"
+title = "Famille — blogue de développement"
+
+[params]
+  description = "Journal de bord du développement de Famille, une application de garde partagée (INF1410, TÉLUQ)."
+  depot = "https://github.com/MrCatYes/famille"
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[markup.highlight]
+  style = "github-dark"
