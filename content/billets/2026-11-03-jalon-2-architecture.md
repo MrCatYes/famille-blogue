@@ -2,7 +2,7 @@
 title: "Jalon 2 : couper la journée en deux"
 date: 2026-11-03
 description: "Une décision d'architecture, une faille trouvée en écrivant le schéma, et ce que la base de données dit de la garde partagée."
-draft: true
+draft: false
 ---
 
 Au jalon 1, j'avais laissé deux questions ouvertes. Faut-il des heures dans les exceptions de garde, pour le « souper avec Papa jusqu'à 18h30 » ? Et faut-il généraliser le motif d'alternance pour couvrir un 2-2-3 ? En rédigeant les décisions d'architecture de ce jalon, j'ai constaté que ces deux questions étaient en fait une seule, et que la réponse changeait la forme de la base de données.
